@@ -20,7 +20,7 @@
         </div>
       </nav>
     </header>
-    <main class="flex-grow-1 d-flex justify-content-center">
+    <main class="flex-grow-1 d-flex justify-content-center flex-column">
       <section class="align-content-center">
         <div class="shadow rounded-2 rounded p-5 container">
           <form id="personaForm">
@@ -32,16 +32,10 @@
               <label for="edad" class="form-label">Edad</label>
               <input type="number" class="form-control" id="edad" required />
             </div>
-            <p class="text-center">Sexo</p>
-            <div class="mb-3 d-flex justify-content-evenly">
-              <div>
-                <input type="radio" id="M" name="sexo" value="M" required />
-                <label for="M">M</label>
-              </div>
-              <div>
-                <input type="radio" id="F" name="sexo" value="F" required />
-                <label for="F">F</label>
-              </div>
+            <div class="mb-3">
+              <label for="sexo" class="form-label">Sexo</label>
+              <input type="text" class="form-control" id="sexo" required />
+            
             </div>
             <div class="mb-3">
               <label for="peso" class="form-label">Peso</label>
@@ -52,14 +46,14 @@
               <input type="number" class="form-control" id="altura" required />
             </div>
             <div class="mb-3">
-              <label for="dni" class="form-label">Dni</label>
-              <input type="text" class="form-control" id="dni" minlength="8" maxlength="8" />
-            </div>
-            <div class="mb-3">
               <label for="AnioNac" class="form-label">Año de Nacimiento</label>
               <input type="number" class="form-control" id="AnioNac" required />
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="d-flex justify-content-evenly">
+
+              <button type="submit" class="btn btn-secondary" id="mayorDeEdad">Mayor de edad?</button>
+              <button type="submit" class="btn btn-info" id="mostrarGeneracion">Mostrar generacion</button>
+            </div>
           </form>
         </div>
       </section>
@@ -73,5 +67,6 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="./tp5-ej2.js"></script>
   </body>
 </html>
