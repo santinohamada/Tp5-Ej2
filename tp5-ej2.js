@@ -51,9 +51,6 @@ class Persona {
     this.dni = Math.floor(10000000 + Math.random() * 90000000);
   }
 
-  
-  
-
   esMayorDeEdad() {
     if (
       this.edad == "" ||
@@ -106,17 +103,15 @@ formulario.addEventListener("submit", function (e) {
 const mostrarGeneracionn = document.querySelector("#mostrarGeneracion");
 const mayorEdad = document.querySelector("#mayorDeEdad");
 mostrarGeneracionn.addEventListener("click", () => {
-  let persona1 = crearPersona()
-  console.log(persona1)
+  let persona1 = crearPersona();
   persona1.mostrarGeneracion();
 });
 mayorEdad.addEventListener("click", () => {
-  let persona1 = crearPersona()
+  let persona1 = crearPersona();
   persona1.esMayorDeEdad();
-  console.log(persona1)
 });
 
-function crearPersona(){
+function crearPersona() {
   return new Persona(
     document.querySelector("#nombre").value,
     document.querySelector("#edad").value,
@@ -125,5 +120,4 @@ function crearPersona(){
     document.querySelector("#altura").value,
     document.querySelector("#AnioNac").value
   );
-  
 }
