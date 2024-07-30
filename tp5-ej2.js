@@ -47,9 +47,7 @@ class Persona {
       Mensaje.innerHTML += "No ingresó una fecha valida<br>";
     }
     document.querySelector("main").appendChild(Mensaje);
-  }
 
-  generarDni() {
     this.dni = Math.floor(10000000 + Math.random() * 90000000);
   }
 
@@ -105,19 +103,16 @@ formulario.addEventListener("submit", function (e) {
 const mostrarGeneracionn = document.querySelector("#mostrarGeneracion");
 const mayorEdad = document.querySelector("#mayorDeEdad");
 mostrarGeneracionn.addEventListener("click", () => {
-  let persona1 = new Persona(
-    document.querySelector("#nombre").value,
-    document.querySelector("#edad").value,
-    document.querySelector("#sexo").value,
-    document.querySelector("#peso").value,
-    document.querySelector("#altura").value,
-    document.querySelector("#AnioNac").value
-  );
-
+  let persona1 = crearPersona();
   persona1.mostrarGeneracion();
 });
 mayorEdad.addEventListener("click", () => {
-  let persona1 = new Persona(
+  let persona1 = crearPersona();
+  persona1.esMayorDeEdad();
+});
+
+function crearPersona() {
+  return new Persona(
     document.querySelector("#nombre").value,
     document.querySelector("#edad").value,
     document.querySelector("#sexo").value,
@@ -125,6 +120,4 @@ mayorEdad.addEventListener("click", () => {
     document.querySelector("#altura").value,
     document.querySelector("#AnioNac").value
   );
-  persona1.esMayorDeEdad();
-  
-});
+}
